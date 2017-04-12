@@ -84,10 +84,12 @@ public class CircularDoublyLinkedList1
 		CDNode prev;
 		temp=head;
 		prev=head;
+		int count=1;
 		while(temp.next!=head)
 		{
 			prev=temp;
-			if(temp.data==data)//deleting at first position
+			System.out.println("counter: "+count);
+			if(temp.data==data && count==1)//deleting at first position
 			{
 				head=temp.next;
 				temp.next.prev=tail;
@@ -95,13 +97,14 @@ public class CircularDoublyLinkedList1
 			}
 			
 			temp=temp.next;
+			count++;
 			if(temp.data==data)//deleting at given position
 			{
-				System.out.println("prev data: "+prev.data+"  temp data: "+temp.data+" temp.next prev data: "+temp.next.prev.data);
+				//System.out.println("prev data: "+prev.data+"  temp data: "+temp.data+" temp.next prev data: "+temp.next.prev.data);
 				temp.next.prev=prev;
-				System.out.println("new temp.next prev data: "+temp.next.prev.data);
+				//System.out.println("new temp.next prev data: "+temp.next.prev.data);
                 prev.next=temp.next;
-                System.out.println("Prev data: "+prev.next.data);
+                //System.out.println("Prev data: "+prev.next.data);
 			}
 		}
 		
@@ -110,6 +113,8 @@ public class CircularDoublyLinkedList1
 			prev.next=tail.next;
 			tail=prev;
 		}
+		
+		
 	}
 	
 	public void display()
