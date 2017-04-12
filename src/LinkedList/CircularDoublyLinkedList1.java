@@ -88,7 +88,6 @@ public class CircularDoublyLinkedList1
 		while(temp.next!=head)
 		{
 			prev=temp;
-			System.out.println("counter: "+count);
 			if(temp.data==data && count==1)//deleting at first position
 			{
 				head=temp.next;
@@ -100,11 +99,8 @@ public class CircularDoublyLinkedList1
 			count++;
 			if(temp.data==data)//deleting at given position
 			{
-				//System.out.println("prev data: "+prev.data+"  temp data: "+temp.data+" temp.next prev data: "+temp.next.prev.data);
 				temp.next.prev=prev;
-				//System.out.println("new temp.next prev data: "+temp.next.prev.data);
                 prev.next=temp.next;
-                //System.out.println("Prev data: "+prev.next.data);
 			}
 		}
 		
